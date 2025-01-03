@@ -118,4 +118,14 @@ describe('Calculator functions', () => {
     })
   })
 
+  it('can do detect invalid expression', () => {
+    calculatorPage.closeBracket();
+    calculatorPage.openBracket();
+    calculatorPage.equal();
+
+    calculatorPage.getResult().then((result) => {
+      expect(result).to.equal("Invalid Expression");
+    })
+  })
+
 })
