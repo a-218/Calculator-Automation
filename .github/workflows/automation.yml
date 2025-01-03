@@ -1,0 +1,36 @@
+name: automation
+
+on:
+  push:
+    branches:
+      - alexlitest
+      - main
+  pull_request:
+    branches:
+      - alexlitest
+      - main
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.20.4"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start http-server
+        run: npx http-server . -p 8080 &
+        working-directory: ./
+
+      - name: Run Cypress tests
+        run: npx cypress run
+        env:
+          CYPRESS_BASE_URL: "http://localhost:8080"
