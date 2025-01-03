@@ -19,7 +19,9 @@ The `index.html` file contains a calculator implementation with these features:
 ## Testing and CI/CD
 
 Cypress: Tests basic calculations, complex expressions, and error scenarios.
+
 GitHub Actions: Automates dependency installation, test execution, and reporting.
+
 Continuous Integration: Runs tests on every push and pull request to ensure reliability.
 
 
