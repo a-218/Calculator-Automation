@@ -27,15 +27,27 @@ Continuous Integration: Runs tests on every push and pull request to ensure reli
 
 ### 2.Local setup
 
+Run npm install
+
+```console
+npm install
+```
+
 Install http server globally
 
 ```console
 npm install -g http-server
 ```
-Install Cypress 
+Install Testing Tools
 ```console
 npx cypress install
 ```
+
+```console
+npx playwright install
+```
+
+Start the Local Server
 
 Open one terminal to run the following command to create the index.html in a local host 8080
 if local host 8080 is occupied, update in the cypress test calculatorFunctions.js
